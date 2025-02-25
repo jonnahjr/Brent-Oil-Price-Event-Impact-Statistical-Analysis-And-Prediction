@@ -35,31 +35,131 @@ The project uses a modular structure to maintain clean, organized code.
 
 ```bash
 
-    ├── .github/
-    ├── data/
-    ├── figures/
-    ├── frontend/
-    ├── notebooks/
-    │   ├── kaim_week_10_eda.ipynb
-    │   ├── kaim_week_10_predict.ipynb
-    │   ├── kaim_week_10_relation.ipynb
-    ├── scripts/
-    │   ├── __init__.py
-    │   ├── app.py
-    │   ├── main.py
-    ├── src/
-    │     └── __init__.py       
-    │     ├── analysis.py
-    │     ├── arima_model.py  
-    │     └── feature_engineering.py  
-    │     ├── model_trainig.py      
-    │     └── relation.py    
-    │     ├── visualization.py                            
-    ├── tests/
-    │   ├── __init__.py                  
-    │   ├── test_data_loader.py               
-    ├── requirements.txt                     
-    ├── README.md                           
+📂 Brent_Oil_Price_Analysis
+│  
+├── 📁 data
+│   ├── exchange_rate
+│   │   ├── inflation_unemployment_data.csv
+│   │   ├── usd_eur_exchange_rate_fred.csv
+│   │   ├── usd_eur_exchange_rates_alpha_vantage.csv
+│   ├── evaluation_result.csv
+│   ├── events.json
+│   ├── major_events.json
+│   ├── xgb_metrics.csv
+│  
+├── 📁 figures
+│   ├── ARIMA_forcast_vs_actual.png
+│   ├── ARIMA_future_forcast.png
+│   ├── CatBoost_actual_vs_predicted.png
+│   ├── CatBoost_forcasting_price.png
+│   ├── CatBoost_residual.png
+│   ├── CatBoost_residual_dist.png
+│   ├── DecisionTree_actual_vs_predicted.png
+│   ├── DecisionTree_forcasting_price.png
+│   ├── DecisionTree_residual.png
+│   ├── DecisionTree_residual_dist.png
+│   ├── GradientBoosting_actual_vs_predicted.png
+│   ├── GradientBoosting_forcasting_price.png
+│   ├── GradientBoosting_residual.png
+│   ├── GradientBoosting_residual_dist.png
+│   ├── RandomForest_actual_vs_predicted.png
+│   ├── RandomForest_residual.png
+│   ├── RandomForest_residual_dist.png
+│   ├── SARIMA_future_forcast.png
+│   ├── acf_pcaf_plots.png
+│   ├── annotations.png
+│   ├── brent_prices_with_events.png
+│   ├── dashboard-price.png
+│   ├── differenced_price.png
+│   ├── merged_prices.png
+│   ├── moving_averages.png
+│   ├── price_trend.png
+│   ├── price_with_exchange_rates.png
+│   ├── xgb_actual_vs_predicted.png
+│   ├── xgb_historical_future_prediction.png
+│   ├── xgb_residual.png
+│   ├── xgb_residual_dist.png
+│  
+├── 📁 frontend
+│   ├── 📁 public
+│   │   ├── assets
+│   │   │   ├── birhan-logo.png
+│   │   │   ├── user.png
+│   │   ├── favicon.ico
+│   │   ├── index.html
+│   │   ├── logo192.png
+│   │   ├── logo512.png
+│   │   ├── manifest.json
+│   │   ├── robots.txt
+│   ├── 📁 src
+│   │   ├── 📁 components
+│   │   │   ├── BarChart.jsx
+│   │   │   ├── GeographyChart.jsx
+│   │   │   ├── Header.jsx
+│   │   │   ├── LineChart.jsx
+│   │   │   ├── PieChart.jsx
+│   │   │   ├── PriceDistribution.jsx
+│   │   │   ├── PriceGraph.jsx
+│   │   │   ├── PriceRange.jsx
+│   │   │   ├── ProgressCircle.jsx
+│   │   │   ├── StatBox.jsx
+│   │   ├── 📁 data
+│   │   │   ├── mockData.js
+│   │   │   ├── mockGeoFeatures.js
+│   │   │   ├── mockPrice.js
+│   │   ├── 📁 scenes
+│   │   │   ├── bar/index.jsx
+│   │   │   ├── calendar/calendar.jsx
+│   │   │   ├── contacts/index.jsx
+│   │   │   ├── dashboard/index.jsx
+│   │   │   ├── faq/index.jsx
+│   │   │   ├── form/index.jsx
+│   │   │   ├── geography/index.jsx
+│   │   │   ├── global/Sidebar.jsx
+│   │   │   ├── global/Topbar.jsx
+│   │   │   ├── invoices/index.jsx
+│   │   │   ├── line/index.jsx
+│   │   │   ├── pie/index.jsx
+│   │   │   ├── prices/index.jsx
+│   │   │   ├── team/index.jsx
+│   │   ├── App.js
+│   │   ├── index.css
+│   │   ├── index.js
+│   │   ├── theme.js
+│   ├── .gitignore
+│   ├── README.md
+│   ├── package-lock.json
+│   ├── package.json
+│  
+├── 📁 notebooks
+│   ├── kaim-week-10-eda.ipynb
+│   ├── kaim-week-10-predict.ipynb
+│   ├── kaim-week-10-relation.ipynb
+│   ├── kaim-week-10-task-1.ipynb
+│   ├── kaim-week10-task-1.ipynb
+│   ├── kaim_week_10_SARIMA_LSTM.ipynb
+│   ├── task-2.ipynb
+│  
+├── 📁 scripts
+│   ├── 📁 catboost_info
+│   │   ├── learn
+│   │   │   ├── events.out.tfevents
+│   │   ├── catboost_training.json
+│   │   ├── learn_error.tsv
+│   │   ├── time_left.tsv
+│  
+├── 📁 src
+│   ├── __init__.py
+│   ├── analysis.py
+│   ├── arima_model.py
+│   ├── data_loader.py
+│   ├── feature_engineering.py
+│   ├── model_training.py
+│  
+├── .gitignore
+├── app.py
+├── main.py
+                         
 
 ```
 
