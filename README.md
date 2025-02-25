@@ -252,7 +252,7 @@ The interactive dashboard provides the following visualization features:
 ![Decision Tree](figures/DecisionTree_residual_dist.png)
 
 ![Random Fores](figures/RandomForest_residual_dist.png)
-
+ 
 
 - **Forecasting and Predictions**: Displayed through charts (e.g., Recharts, Chart.js) for understanding future price movements based on selected models.
 
